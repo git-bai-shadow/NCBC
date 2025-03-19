@@ -1,0 +1,190 @@
+:root {
+  --color-1:#283242;
+  --color-2:#ffdd40;
+  --color-3:#131417;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: var(--color-1);
+}
+
+::-webkit-scrollbar-button {
+  background-color: var(--color-1);
+}
+
+::-webkit-scrollbar-thumb {
+  height: 50px;
+  background-color: var(--color-2);
+}
+
+*,
+*:after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='69.283' height='40' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(225, 10%, 8%, 1)'/><path d='M46.189-20L57.736 0M46.189 20l11.547 20m-46.189 0l11.547 20M11.547 0l11.547 20m40.415 30H40.415M28.868 30H5.774m23.094-40H5.774m57.735 20H40.415m0 20L28.868 50m11.547-60L28.868 10m46.188 0L63.509 30M5.774 10L-5.773 30m75.056 10H46.189L34.64 20 46.19 0h23.094C73.13 6.667 76.98 13.333 80.83 20zM57.736 60H34.64L23.094 40l11.547-20h23.095c3.848 6.667 7.698 13.333 11.547 20L57.736 60zm0-40H34.64L23.094 0l11.547-20h23.095L69.283 0c-3.87 6.7-8.118 14.06-11.547 20zM34.64 60H11.547L0 40l11.547-20h23.094L46.19 40 34.64 60zm0-40H11.547L0 0l11.547-20h23.094L46.19 0 34.64 20zM23.094 40H0l-5.773-10-5.774-10L0 0h23.094l11.547 20-11.547 20z'  stroke-width='1' stroke='hsla(225, 5%, 10%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+  user-select: none;
+  font-family: "Switzer", sans-serif;
+}
+
+h1 {
+  position: relative;
+  font-family: "Khand", sans-serif;
+  font-size: calc(1vw + 1vh + .5vmin);
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  color: #ffdd40;
+}
+
+.container {
+  padding: 3rem 0;
+  margin: 0 auto;
+  width: 80vw;
+}
+
+.gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70vh;
+  border-radius: 2rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0);
+}
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  overflow: hidden;
+  mix-blend-mode: screen;
+  filter: grayscale(1) saturate(0) brightness(90%) contrast(150%);
+  transition: flex 0.4s cubic-bezier(0.32, 0.79, 0.38, 0.99), filter 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.item:hover {
+  flex: 7;
+  filter: grayscale(0) saturate(1.3) blur(0px);
+}
+.item:hover .caption {
+  opacity: 1;
+}
+.item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: radial-gradient(circle closest-side, #333 1px, transparent 1px);
+  background-size: 8px 8px;
+  filter: contrast(500%);
+  transition: opacity 0.2s cubic-bezier(0.86, 0, 0.07, 1);
+  opacity: 0.3;
+  pointer-events: none;
+}
+.item:hover:before {
+  opacity: 0;
+}
+
+.caption {
+  position: fixed;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0;
+  margin: 1rem;
+  padding: 1rem;
+  color: #eee;
+  border: solid 1px rgba(255, 255, 255, 0.25);
+  border-radius: 2rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s ease, backdrop-filter 1s cubic-bezier(0.86, 0, 0.07, 1);
+  /*
+  transition-delay:1s;
+  */
+  opacity: 0;
+}
+.caption:hover {
+  backdrop-filter: blur(0px);
+}
+.caption p {
+  width: 100%;
+}
+.caption h1 {
+  color: #41bbf5;
+}
+
+.item-1 {
+  border-radius: 2rem 0rem 0rem 2rem;
+  background-image: url("https://ts1.tc.mm.bing.net/th/id/R-C.5d0a8d095cd524c8c2ccfa8d16c75e64?rik=PEzoyuVz3Sq70w&riu=http%3a%2f%2fstatic-data.gaokao.cn%2fupload%2fschool%2f202009%2f1607508360_1103_thumb.jpg&ehk=nvnSYlNggJySGgfQQfFdsuHhc3pvLKZmsfCUaoKqVpY%3d&risl=&pid=ImgRaw&r=0");
+}
+
+.item-2 {
+  background-image: url("https://so1.360tres.com/t0159bcb9b83046ade1.jpg");
+}
+
+.item-3 {
+  background-image: url("https://ts1.tc.mm.bing.net/th/id/R-C.ab7316cdcd9b44d8d3b208b489dd2be5?rik=lz72ikd%2fJwD%2bdg&riu=http%3a%2f%2fstatic-data.gaokao.cn%2fupload%2fsvideo%2f1611802877_8084_thumb.jpg&ehk=1LQiWawKKToJ7Vl7lWLhA4n4KfnTsplYZ5cA3zCiShE%3d&risl=&pid=ImgRaw&r=0");
+}
+
+.item-4 {
+  background-image: url("https://img.gaoxiaojob.com/uploads/company_style_atlas/31366/20220928091522_81040.jpeg");
+}
+
+.item-5 {
+  border-radius: 0rem 2rem 2rem 0rem;
+  background-image: url("https://tse1-mm.cn.bing.net/th/id/OIP-C.HrrEuymgz1v7EUlGCQ3XmAHaEo?pid=ImgDet&w=474&h=296&rs=1");
+}
+
+.challenge {
+  font-weight: normal;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  backdrop-filter: blur(0px);
+  /*
+  background:#1e1f26;
+  background: rgba(37,33,64,0.1);
+  */
+  border: solid;
+  border-image: linear-gradient(to bottom, #ffdd40 0%, rgba(255, 221, 64, 0) 100%);
+  padding: 9px;
+  color: #ffdd40;
+}
+.challenge a {
+  color: #ffdd40;
+  text-decoration: none;
+  transition: all 2s ease;
+}
+.challenge a:hover {
+  color: #47cf73;
+  text-decoration: underline;
+}
+
+.challenge span {
+  display: flex;
+  align-content: center;
+  position: relative;
+}
+
+.btn-social-cp {
+  --dim:30px;
+  position: fixed;
+  bottom: var(--dim);
+  right: var(--dim);
+  height: var(--dim);
+  width: var(--dim);
+}
+.btn-social-cp svg path {
+  transition: all 2s ease;
+  fill: #ffdd40;
+}
+.btn-social-cp:hover svg path {
+  fill: #fff;
+}
